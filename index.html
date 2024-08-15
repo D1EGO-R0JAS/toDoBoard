@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Scrum Board</title>
+</head>
+<body>
+  <h1>Scrum Board</h1>
+  <dialog id="createTask">
+    <form class="dialog">
+        <label for="title" class="labelsText">Titulo de la Tarea</label>
+        <input type="text" name="title">
+        <label for="description" class="labelsText">Descripción de la Tarea</label>
+        <textarea name="description"></textarea>
+        <div class="options">
+            <p>Prioridad:</p>
+            <input type="radio" name="priority" value="low" id="lowPriority">
+            <label for="lowPriority" class="low">B</label>
+            <input type="radio" name="priority" value="mid" id="midPriority">
+            <label for="midPriority" class="mid">M</label>
+            <input type="radio" name="priority" value="high" id="highPriority">
+            <label for="highPriority" class="high">A</label>
+        </div>
+        <div>
+            <button class="create">Crear Tarea</button>
+            <button class="close">Salir</button>
+        </div>
+    </form>
+</dialog>
+  <main>
+    <section class="pending">
+      <h2>Pendiente<span class="addTask"> add..</span></h2>
+      <article class="pendingTasks">
+        <div class="task" draggable="true">
+          <h3>Tarea 10 <span>🟠</span></h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem hic necessitatibus tempore libero cumque fuga, temporibus vel facere dolorum distinctio autem culpa, atque dolor ipsum, ex commodi excepturi. Minus, provident.</p>
+          <p>Fecha de Creacion 28/02/22</p>
+        </div>
+      </article>
+    </section>
+    <section class="in-progress">
+      <h2>En Progreso <span>➕</span></h2>
+      <article class="in-progressTasks">
+        <div class="task">
+          <h3>Tarea 1 <span>🟠</span></h3>          
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem hic necessitatibus tempore libero cumque fuga, temporibus vel facere dolorum distinctio autem culpa, atque dolor ipsum, ex commodi excepturi. Minus, provident.</p>
+          <p>Fecha de Creacion 28/02/22</p>
+        </div>
+      </article>
+    </section>
+    <section class="completed">
+      <h2>Realizado <span>➕</span></h2>
+      <article class="completedTasks">
+        <div class="task">
+          <h3>Tarea 1 <span>🟠</span></h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem hic necessitatibus tempore libero cumque fuga, temporibus vel facere dolorum distinctio autem culpa, atque dolor ipsum, ex commodi excepturi. Minus, provident.</p>
+          <p>Fecha de Creacion 28/02/22</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
