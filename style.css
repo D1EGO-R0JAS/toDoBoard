@@ -5,6 +5,31 @@ body h1{
     text-align: center;
     margin: 30px 0 ;
 }
+.darkMode{
+    background-color: rgb(71, 71, 71);
+}
+.mood{
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
+}
+.mood.dark::before{
+    content: '⭐';    
+    background-color: white;
+    border-radius: 10px;
+    padding: 3px;
+}
+.mood::before{
+    content: '🌙';
+    background-color: black;
+    border-radius: 10px;
+    padding: 3px;
+}
+h1.darkMode{
+    color: white;
+}
 main{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -16,21 +41,55 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
     border: 1px solid black;
     padding: 10px;
 }
+.pending.darkMode, .in-progress.darkMode, .completed.darkMode{
+    border: 1px solid aquamarine;
+    color: white;
+}
 .pendingTasks, .in-progressTasks, .completedTasks{
     border-top:1px solid black;
+    width: 100%;
+    min-height: 100px;
 }
-.pending h2 span, .in-progress h2 span, .completed h2 span{
+.pendingTasks.darkMode, .in-progressTasks.darkMode, .completedTasks.darkMode{
+    border-top: 1px solid aquamarine;
+}
+.pending h2 span{
     font-size: 12px;
     cursor: pointer;
 }
 .task{
     background-color: aquamarine;
+    color: black;
     border-radius: 10px;
     padding: 5px 10px;
-    margin: 20px 5px;
+    margin: 10px 5px;
+    position: relative;
+}
+.task.darkMode{
+    background-color: rgb(235, 195, 201);
+    color: black;
+}
+.edit, .delete{
+    cursor: pointer;
+    position: absolute;
+    font-size: 13px;
+}
+.edit{
+    top: 10px;
+    right: 45px;
+}
+.delete{
+    top: 10px;
+    right: 10px;
+    
+}
+.sataus{
+    display: block;
+    position: static;
 }
 
 /* Craeacion del Modal para agregar Tareas */
@@ -89,7 +148,20 @@ input#midPriority:checked + label.mid {
 input#highPriority:checked + label.high {
     background-color: red;
     color: #fff;
-}    
+}
+/* Cambios de color al seleccionar en el edit */
+input#lowPriority2:checked + label.low {
+    background-color: yellow;
+    color: grey;
+}        
+input#midPriority2:checked + label.mid {
+    background-color: orange;
+    color: #fff;
+}        
+input#highPriority2:checked + label.high {
+    background-color: red;
+    color: #fff;
+}     
 /* Botones del modal */
 form div {
     display: flex;
